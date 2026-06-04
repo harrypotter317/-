@@ -1,4 +1,10 @@
-!<body>
+<body>
+<div class="tip-box">
+  💡 טיפ
+  <br>
+
+  אפשר למצוא כאן משחקים בדיוק בשבילכם ולחסוך המון כסף בקניה
+</div>
 <div class="top-buttons">
   <button class="long-btn"><a href="profile.html">לעבור ל - פרופיל שלי</a></button>
   <button class="long-btn"><a href="aboutus.html">לעבור ל - about us</a></button>
@@ -134,12 +140,34 @@
 
 </body>
 <style>
+.tip-box{
+  position: fixed;
+  left: 20px;
+  top: 200px;
+
+  width: 180px;
+
+  background: #fff5fb;
+
+  border: 2px dashed #f48dbf;
+
+  border-radius: 15px;
+
+  padding: 15px;
+
+  color: #23306d;
+
+  text-align: center;
+
+  font-weight: bold;
+}
+
    :root {
   --bg-color: #021a54;       
   --card-bg: #ffffff;          
   --text-main: #021a54;      
   --text-muted: #ff85bb;     
-  --accent-primary: #ff85bb; 
+  --accent-primary: #ff85bb;  
   --accent-light: #ffceee;   
   --bg-light: #ffceee;       
   --border-color: #ff85bb;   
@@ -288,50 +316,4 @@ h2 {
   padding-bottom: 8px;
   margin-top: 0;
   margin-bottom: 15px;
-  text-align: right;
-}
-
-/* Styled Container Box for Cart Elements below everything */
-.cart-container-card {
-  background-color: var(--card-bg);
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  margin: 20px auto;
-  max-width: 850px;
-}
-
-/* Shopping Cart List Styles */
-#cart {
-  padding-right: 20px;
-  margin: 0;
-}
-
-#cart li {
-  color: var(--text-main);
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-</style>
-<script>
-    
-function addToCart(id) {
-
-  const input = document.getElementById(id);
-
-  const quantity = input.value;
-  if (quantity > 0 && !== " ") {
-
-  const cart = document.getElementById("cart");
-
-  const li = document.createElement("li");
-
-  li.textContent = id + " - כמות: " + quantity;
-
-  cart.appendChild(li);
-
-  else {alert("quantity is not valid!");}
-}
-</script>
+  text-align
