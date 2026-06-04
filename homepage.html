@@ -1,4 +1,17 @@
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEYAD2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+
+    <div class="logo-container">
+        <span class="logo-icon">🎮</span>
+        <h1 class="logo-text">GAMEYAD2</h1>
+    </div>
+
 <div class="tip-box">
   💡 טיפ
   <br>
@@ -140,26 +153,66 @@
 
 </body>
 <style>
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.logo-text {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(255, 133, 187);
+    filter: drop-shadow(0 0 15px rgba(255, 133, 187, 0.6));
+    transition: all 0.3s ease;
+}
+
+.logo-icon {
+    font-size: 3.8rem;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
+}
+
+.logo-container:hover .logo-text {
+    filter: drop-shadow(0 0 25px rgba(255, 133, 187, 0.9));
+    transform: scale(1.03);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-text {
+        font-size: 2.2rem;
+    }
+    .logo-icon {
+        font-size: 2.5rem;
+    }
+}
+
 .tip-box{
   position: fixed;
-  left: 20px;
+  right: 20px;
   top: 200px;
-
   width: 180px;
-
   background: #fff5fb;
-
   border: 2px dashed #f48dbf;
-
   border-radius: 15px;
-
   padding: 15px;
-
   color: #23306d;
-
   text-align: center;
-
   font-weight: bold;
+  z-index: 9999;
 }
 
    :root {
@@ -184,7 +237,6 @@ body {
   line-height: 1.6;
 }
 
-/* Top Buttons Container */
 .top-buttons {
   display: flex;
   justify-content: center;
@@ -192,7 +244,6 @@ body {
   margin: 20px 0 40px 0;
 }
 
-/* Profile / About navigation links */
 .long-btn {
   width: 100%;
   max-width: 400px;
@@ -225,95 +276,8 @@ body {
   transform: translateY(1px);
 }
 
-/* Grid Container for Game Cards */
 .cards-container {
   display: flex;
   gap: 25px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-/* Game Card Components */
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 20px;
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
-}
-
-.card img {
-  width: 100%;
-  height: 200px; 
-  object-fit: cover; 
-  border-radius: 6px;
-  border: 2px solid var(--border-color);
-  margin-bottom: 15px;
-}
-
-.name {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--bg-color);
-  margin: 0 0 15px 0;
-  text-align: center;
-}
-
-/* Numeric Input Styles */
-.card input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  color: var(--text-main);
-  font-size: 15px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.card input[type="number"]:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 8px rgba(255, 133, 187, 0.5);
-}
-
-/* Add To Cart Button styling */
-.card button {
-  width: 100%;
-  background-color: var(--accent-primary);
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
-  margin: 0;
-}
-
-.card button:hover {
-  background-color: #e06c9f;
-  transform: translateY(-1px);
-}
-
-.card button:active {
-  transform: translateY(1px);
-}
-
-/* Section Header Styling */
-h2 {
-  color: var(--bg-color);
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 8px;
-  margin-top: 0;
-  margin-bottom: 15px;
-  text-align
