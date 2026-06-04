@@ -1,0 +1,286 @@
+<button><a href="homepage.html">חזרה לדף הבית</a></button>
+<img id="img" src="img.png" style="border-radius: 50%; width: 200px; height: 200px;">
+<h3 id="username">שם משתמש</h3>
+<h3 id="email">אימייל</h3>
+<h3 id="password">סיסמה</h3>
+<h2>כתובת</h2>
+<h3 id="city">עיר</h3>
+<h3 id="country">מדינה</h3>
+<h3 id="street">רחוב</h3>
+<h2>פרטי כרטיס אשראי</h2>
+<h3 id="creditCardNumber">מספר כרטיס</h3>
+<h3 id="expirationDate">תוקף</h3>
+<h3 id="cvv">CVV</h3>
+
+<h2>מנוי</h2>
+<h3 id="status">סטטוס מנוי</h3>
+<h3>סוגי מנויים</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>רמת מנוי</th>
+      <th>כמות משחקים בחודש</th>
+      <th>זמן השאלה למשחק</th>
+      <th>קהל יעד</th>
+    </tr>
+  </thead>
+  <body>
+    <tr>
+      <td><strong>free</strong></td>
+      <td>עד 2 משחקים</td>
+      <td>שבועיים למשחק</td>
+      <td>שחקנים ספונטניים או משפחות המחפשות גיוון קל לסופי שבוע.</td>
+    </tr>
+    <tr>
+      <td><strong>plus</strong></td>
+      <td>עד 4 משחקים</td>
+      <td>חודש ימים למשחק</td>
+      <td>שחקנים קבועים הזקוקים לזמן כדי לסיים משחקים ארוכים ומורכבים.</td>
+    </tr>
+    <tr>
+      <td><strong>premium</strong></td>
+      <td>ללא הגבלה (בסבבים)</td>
+      <td>חודשיים למשחק</td>
+      <td>גיימרים כבדים או קבוצות חברים המעוניינים בחופש מוחלט ומרתונים של משחקים.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>בחר את סוג המנוי שלך:</h3>
+<select name="subscription" id="subscription">
+  <option value="free">חינם 0 ש"ח/חודש</option>
+  <option value="plus">פלוס 15 ש"ח/חודש</option>
+  <option value="premium">פרימיום 30 ש"ח/חודש</option>
+</select>
+<button onclick="updateSubscription()">עדכן מנוי</button>
+<br>
+<h2 id="my-target">המשחקים שלי</h2>
+
+<button onclick="document.getElementById('addGameForm').style.display = 'block';">הוספת משחקים להשאלה</button>
+<form id="addGameForm" style="display: none;" onsubmit="addGame(event)">
+  <label for="gameImage">תמונה של המשחק:</label>
+  <input type="file" id="gameImage" name="gameImage" accept="image/*">
+  <br>
+  <label for="gameName">שם המשחק:</label>
+  <input type="text" id="gameName" name="gameName">
+  <br>
+  <label for="gameDescription">תיאור המשחק:</label>
+  <textarea id="gameDescription" name="gameDescription"></textarea>
+  <br>
+  <button type="submit">הוסף משחק</button>
+</form>
+
+<script>
+  function addGame(event) {
+      event.preventDefault()
+    const imageInput = document.getElementById('gameImage');
+    const gameName = document.getElementById('gameName').value;
+    const gameDescription = document.getElementById('gameDescription').value;
+
+    let imageSrc = '';
+    if (imageInput.files.length > 0) {
+      imageSrc = URL.createObjectURL(imageInput.files[0]);
+    }
+    
+
+    const targetElement = document.getElementById('my-target');
+
+    const rawHTML = `
+      <div class="game-card">
+        ${imageSrc ? `<img src="${imageSrc}" alt="${gameName}" style="width: 100px; height: 100px;">` : ''}
+        <h3>${gameName}</h3>
+        <p>${gameDescription}</p>
+      </div>
+    `;
+    
+    targetElement.insertAdjacentHTML('afterend', rawHTML);
+    alert("המשחק " + gameName + " נוסף בהצלחה!");
+    
+    document.getElementById('addGameForm').reset();
+    document.getElementById('addGameForm').style.display = 'none';
+    }
+  
+  function updateSubscription() {
+    const selectedSubscription = document.getElementById("subscription").value;
+    alert("המנוי שנבחר: " + selectedSubscription);
+    document.getElementById("status").textContent = "המנוי שנבחר: " + selectedSubscription;
+  }
+</script>
+
+<style>
+  :root {
+    --bg-color: #021a54;       
+    --card-bg: #ffffff;           
+    --text-main: #021a54;      
+    --text-muted: #ff85bb;     
+    --accent-primary: #ff85bb; 
+    --accent-light: #ffceee;   
+    --bg-light: #ffceee;       
+    --border-color: #ff85bb;   
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    direction: rtl;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  h2 {
+    color: var(--bg-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-top: 40px;
+  }
+
+  h3 {
+    color: var(--text-main);
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  #img {
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 4px 15px rgba(255, 133, 187, 0.4);
+    display: block;
+    margin-bottom: 20px;
+    object-fit: cover;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: right;
+  }
+
+  th {
+    background-color: var(--bg-color);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  tr {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  tr:last-child {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background-color: #fff0f9;
+  }
+
+  select, input[type="text"], textarea, input[type="file"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 8px rgba(255, 133, 187, 0.5);
+  }
+
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    color: var(--text-main);
+  }
+
+  button {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    margin: 10px 0;
+  }
+
+  button:hover {
+    background-color: #e06c9f;
+    transform: translateY(-1px);
+  }
+
+  button:active {
+    transform: translateY(1px);
+  }
+
+  #addGameForm button[type="submit"] {
+    background-color: var(--bg-color);
+  }
+
+  #addGameForm button[type="submit"]:hover {
+    background-color: #01113a;
+  }
+
+  #addGameForm {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-top: 15px;
+    max-width: 440px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .game-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .game-card img {
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+  }
+
+  .game-card h3 {
+    margin: 0 0 5px 0;
+    color: var(--bg-color);
+  }
+
+  .game-card p {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 14px;
+  }
+</style>
+

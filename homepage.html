@@ -1,0 +1,335 @@
+<body>
+<div class="top-buttons">
+  <button class="long-btn"><a href="profile.html">לעבור ל - פרופיל שלי</a></button>
+  <button class="long-btn"><a href="aboutus.html">לעבור ל - about us</a></button>
+</div>
+
+<div class="cards-container">
+    <div class="card-wrapper">
+<div class="card">  <img src=https://mindx.co.il/wp-content/uploads/2024/08/%D7%9E%D7%95%D7%A0%D7%95%D7%A4%D7%95%D7%9C-%D7%A7%D7%9C%D7%90%D7%A1%D7%99-8-%D7%9B%D7%9C%D7%99%D7%9D.jpg>
+  <p class="name">מונופול</p>
+    <input type="number" id="מונופול" placeholder="amount">
+
+<button onclick="addToCart('מונופול')">
+  add
+</button>
+</div>
+  </div>
+   
+       <div class="card-wrapper">
+<div class="card">
+
+  <img src=TAKI.webp>
+  <p class="name">טאקי</p>
+  <input type="number" id="טאקי" placeholder="amount">
+
+<button onclick="addToCart('טאקי')">
+  add
+</button>
+</div>
+  </div>
+   
+     
+       <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://kidsbest.co.il/wp-content/uploads/2019/11/dubble_1-300x400.jpg>
+  <p class="name">דאבל</p>
+  <input type="number" id="דאבל" placeholder="amount">
+  <button onclick="addToCart('דאבל')">add</button>
+</div>
+  </div>
+   
+   <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://www.dvarimbego.co.il/pub/123432/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D/7290002518013.jpg?quality=65&width=&height=&mode=max>
+  <p class="name">רמיקוב</p>
+    <input type="number" id="רמיקוב" placeholder="amount">
+
+<button onclick="addToCart('רמיקוב')">
+  add</button>
+</div>
+  </div>
+   
+  <div class="card-wrapper">
+<div class="card">
+
+  <img src=RATATAT-3.jpg>
+  <p class="name">חתחתול</p>
+  <input type="number" id="חתחתול" placeholder="amount">
+
+<button onclick="addToCart('חתחתול')">
+  add</button>
+</div>
+  </div>
+   
+  <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://img.zap.co.il/pics/1/0/8/1/47841801d.gif>
+  <p class="name">חלומות</p>
+  <input type="number" id="חלומות" placeholder="amount">
+
+<button onclick="addToCart('חלומות')">
+  add</button>
+</div>
+  </div>
+   
+      
+  <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://m.media-amazon.com/images/I/71RWg4fbSHL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg>
+  <p class="name">היטסטר</p>
+  <input type="number" id="היטסטר" placeholder="amount">
+
+<button onclick="addToCart('היטסטר')">
+  add</button>
+</div>
+  </div>
+   
+     <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://www.misradia.co.il/cdn/shop/files/original-39659.jpg?v=1704272829>
+  <p class="name">טאבו</p>
+  <input type="number" id="טאבו" placeholder="amount">
+
+<button onclick="addToCart('טאבו')">
+  add</button>
+</div>
+  </div>
+   
+   <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://www.bookme.co.il/Images/Site/Products/549906.jpg>
+  <p class="name">שם קוד</p>
+  <input type="number" id="שם קוד" placeholder="amount">
+
+<button onclick="addToCart('שם קוד')">
+  add</button>
+</div>
+  </div>
+   
+   
+      <div class="card-wrapper">
+<div class="card">
+
+  <img src=https://cdn.agora.co.il/deals_images/2024-02/2855875.jpg?v=1>
+  <p class="name">נחש מי</p>
+  <input type="number" id="נחש מי" placeholder="amount">
+
+<button onclick="addToCart('נחש מי')">
+  add</button>
+</div>
+  </div>
+</div>
+
+<div class="cart-container-card">
+  <h2>עגלה</h2>
+  <ul id="cart"></ul>
+</div>
+
+</body>
+<style>
+   :root {
+  --bg-color: #021a54;       
+  --card-bg: #ffffff;          
+  --text-main: #021a54;      
+  --text-muted: #ff85bb;     
+  --accent-primary: #ff85bb; 
+  --accent-light: #ffceee;   
+  --bg-light: #ffceee;       
+  --border-color: #ff85bb;   
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  direction: rtl;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Top Buttons Container */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0 40px 0;
+}
+
+/* Profile / About navigation links */
+.long-btn {
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.long-btn a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.long-btn:hover {
+  background-color: #01113a;
+  transform: translateY(-1px);
+}
+
+.long-btn:active {
+  transform: translateY(1px);
+}
+
+/* Grid Container for Game Cards */
+.cards-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Game Card Components */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bg-color);
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+/* Numeric Input Styles */
+.card input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-size: 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 8px rgba(255, 133, 187, 0.5);
+}
+
+/* Add To Cart Button styling */
+.card button {
+  width: 100%;
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  margin: 0;
+}
+
+.card button:hover {
+  background-color: #e06c9f;
+  transform: translateY(-1px);
+}
+
+.card button:active {
+  transform: translateY(1px);
+}
+
+/* Section Header Styling */
+h2 {
+  color: var(--bg-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+/* Styled Container Box for Cart Elements below everything */
+.cart-container-card {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  max-width: 850px;
+}
+
+/* Shopping Cart List Styles */
+#cart {
+  padding-right: 20px;
+  margin: 0;
+}
+
+#cart li {
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+</style>
+<script>
+    
+function addToCart(id) {
+
+  const input = document.getElementById(id);
+
+  const quantity = input.value;
+
+  const cart = document.getElementById("cart");
+
+  const li = document.createElement("li");
+
+  li.textContent = id + " - כמות: " + quantity;
+
+  cart.appendChild(li);
+}
+
+</script>

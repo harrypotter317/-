@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEYAD2 - עלינו</title>
+    
+    <style>
+        :root {
+            --bg-color: #021a54;       
+            --card-bg: #ffffff;          
+            --text-main: #021a54;      
+            --text-muted: #ff85bb;     
+            --accent-primary: #ff85bb; 
+            --accent-light: #ffceee;   
+            --bg-light: #ffceee;       
+            --border-color: #ff85bb;   
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            direction: rtl;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: var(--bg-color);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: var(--bg-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: var(--text-main);
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Container flex layout to neatly display tier boxes like the grid layout */
+        .tier-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* Base subscription tier box architecture */
+        .box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px 20px;
+            width: 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Distinct highlighted middle option layout tier */
+        .box.pink {
+            background-color: #fff0f9;
+            border: 2px solid var(--accent-primary);
+            box-shadow: 0 4px 15px rgba(255, 133, 187, 0.2);
+        }
+
+        /* Clean feature item list rule layouts */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Checkmarks adjustments for key features section layout */
+        section ul li {
+            position: relative;
+            padding-right: 25px;
+        }
+
+        /* Tier card features simple standard spacer styling */
+        .box ul li {
+            padding-right: 0;
+            text-align: center;
+            border-bottom: 1px dashed rgba(2, 26, 84, 0.1);
+            padding-bottom: 6px;
+        }
+
+        .box ul li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Bottom Home action button layout matching the dynamic primary rules */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .btn {
+            background-color: var(--accent-primary);
+            border: none;
+            height: 45px;
+            width: 100%;
+            max-width: 200px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+            padding: 0;
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn:hover {
+            background-color: #e06c9f;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎮 GAMEYAD2</h1>
+
+    <section>
+        <h2>עלינו</h2>
+        <p>
+            ברוכים הבאים ל־<strong>GAMEYAD2</strong> — הפלטפורמה שמאפשרת לכם ליהנות
+            ממשחקים בלי לקנות כל משחק במחיר מלא.
+        </p>
+        <p>
+            המטרה שלנו היא להפוך את עולם הגיימינג לנגיש, נוח ומשתלם יותר עבור כולם.
+        </p>
+    </section>
+
+    <section>
+        <h2>רמות המנוי שלנו</h2>
+        
+        <div class="tier-container">
+            <div class="box">
+                <h3>🕹️ Casual Gamer</h3>
+                <h3>₪0</h3>
+                <ul>
+                    <li>עד 2 משחקים בחודש</li>
+                    <li>שבועיים לכל משחק</li>
+                </ul>
+            </div>
+
+            <div class="box pink">
+                <h3>🔥 Hardcore Gamer</h3>
+                <h3>₪15</h3>
+                <ul>
+                    <li>עד 4 משחקים בחודש</li>
+                    <li>חודש לכל משחק</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>👑 Master Gamer</h3>
+                <h3>₪30</h3>
+                <ul>
+                    <li>ללא הגבלה</li>
+                    <li>חודשיים לכל משחק</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>למה לבחור בנו?</h2>
+        <ul style="padding-right: 5px;">
+            <li>✔ חיסכון בעלויות</li>
+            <li>✔ מגוון רחב של משחקים</li>
+            <li>✔ מחירים נוחים</li>
+            <li>✔ שירות פשוט ומהיר</li>
+            <li>✔ עוזר לסביבה</li>
+        </ul>
+    </section>
+
+    <div class="btn-container">
+        <button class="btn"><a href="homepage.html">דף הבית</a></button>
+    </div>
+
+</body>
+</html>

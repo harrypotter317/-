@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEYAD2</title>
+    
+    <style>
+        :root {
+            --primary-navy: #021A54;
+            --accent-pink: #FF85BB;
+            --light-pink: #FFCEE3;
+            --bg-neutral: #F5F5F5;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-neutral);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(2, 26, 84, 0.05);
+            z-index: -1; 
+            pointer-events: none;
+        }
+
+        .login-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(2, 26, 84, 0.1); /* צל עדין בגוון נייבי */
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-card h1 {
+            color: var(--primary-navy);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .record-store {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .login-btn {
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease; 
+            text-transform: capitalize;
+        }
+
+        #btnup {
+            background-color: var(--accent-pink);
+            color: var(--white);
+        }
+
+        #btnup:hover {
+            background-color: #e06fa1; 
+            transform: translateY(-2px); 
+            box-shadow: 0 5px 15px rgba(255, 133, 187, 0.4);
+        }
+
+        #btnin {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+
+        #btnin:hover {
+            background-color: #01123b; /* נייבי מעט כהה יותר בהובר */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(2, 26, 84, 0.3);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="login-card">
+        <h1>GAMEYAD2</h1>
+        <div class="record-store">
+            <button id="btnup" class="login-btn">sign up</button>
+            <button id="btnin" class="login-btn">login</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btnin").addEventListener("click", function() {
+            window.location.href = "login.html";
+        });
+
+        document.getElementById("btnup").addEventListener("click", function() {
+            window.location.href = "signin.html";
+        });
+    </script>
+</body>
+</html>
