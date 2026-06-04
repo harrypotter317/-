@@ -1,4 +1,4 @@
-<body>
+!<body>
 <div class="top-buttons">
   <button class="long-btn"><a href="profile.html">לעבור ל - פרופיל שלי</a></button>
   <button class="long-btn"><a href="aboutus.html">לעבור ל - about us</a></button>
@@ -322,6 +322,7 @@ function addToCart(id) {
   const input = document.getElementById(id);
 
   const quantity = input.value;
+  if (quantity !<= 0 && !== " ") {
 
   const cart = document.getElementById("cart");
 
@@ -331,5 +332,5 @@ function addToCart(id) {
 
   cart.appendChild(li);
 }
-
+else {alert("quantity is not valid!")}
 </script>
