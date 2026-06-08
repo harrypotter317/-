@@ -28,8 +28,8 @@
     <div class="card">  
       <img src="images.webp">
       <p class="name">מונופול</p>
-      <input type="number" id="מונופול" placeholder="amount">
-      <button onclick="addToCart('מונופול')">add</button>
+      <input type="number" id="מונופול" placeholder="amount" min="1">
+      <button onclick="addToCart('מונופול', 'מונופול')">add</button>
     </div>
   </div>
    
@@ -37,8 +37,8 @@
     <div class="card">
       <img src="TAKI.webp">
       <p class="name">טאקי</p>
-      <input type="number" id="טאקי" placeholder="amount">
-      <button onclick="addToCart('טאקי')">add</button>
+      <input type="number" id="טאקי" placeholder="amount" min="1">
+      <button onclick="addToCart('טאקי', 'טאקי')">add</button>
     </div>
   </div>
    
@@ -46,8 +46,8 @@
     <div class="card">
       <img src="https://kidsbest.co.il/wp-content/uploads/2019/11/dubble_1-300x400.jpg">
       <p class="name">דאבל</p>
-      <input type="number" id="דאבל" placeholder="amount">
-      <button onclick="addToCart('דאבל')">add</button>
+      <input type="number" id="דאבל" placeholder="amount" min="1">
+      <button onclick="addToCart('דאבל', 'דאבל')">add</button>
     </div>
   </div>
    
@@ -55,8 +55,8 @@
     <div class="card">
       <img src="https://www.dvarimbego.co.il/pub/123432/%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D/7290002518013.jpg?quality=65&width=&height=&mode=max">
       <p class="name">רמיקוב</p>
-      <input type="number" id="רמיקוב" placeholder="amount">
-      <button onclick="addToCart('רמיקוב')">add</button>
+      <input type="number" id="רמיקוב" placeholder="amount" min="1">
+      <button onclick="addToCart('רמיקוב', 'רמיקוב')">add</button>
     </div>
   </div>
    
@@ -64,8 +64,8 @@
     <div class="card">
       <img src="RATATAT-3.jpg">
       <p class="name">חתחתול</p>
-      <input type="number" id="חתחתול" placeholder="amount">
-      <button onclick="addToCart('חתחתול')">add</button>
+      <input type="number" id="חתחתול" placeholder="amount" min="1">
+      <button onclick="addToCart('חתחתול', 'חתחתול')">add</button>
     </div>
   </div>
    
@@ -73,8 +73,8 @@
     <div class="card">
       <img src="https://img.zap.co.il/pics/1/0/8/1/47841801d.gif">
       <p class="name">חלומות</p>
-      <input type="number" id="חלומות" placeholder="amount">
-      <button onclick="addToCart('חלומות')">add</button>
+      <input type="number" id="חלומות" placeholder="amount" min="1">
+      <button onclick="addToCart('חלומות', 'חלומות')">add</button>
     </div>
   </div>
       
@@ -82,8 +82,8 @@
     <div class="card">
       <img src="https://m.media-amazon.com/images/I/71RWg4fbSHL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg">
       <p class="name">היטסטר</p>
-      <input type="number" id="היטסטר" placeholder="amount">
-      <button onclick="addToCart('היטסטר')">add</button>
+      <input type="number" id="היטסטר" placeholder="amount" min="1">
+      <button onclick="addToCart('היטסטר', 'היטסטר')">add</button>
     </div>
   </div>
    
@@ -91,8 +91,8 @@
     <div class="card">
       <img src="https://www.misradia.co.il/cdn/shop/files/original-39659.jpg?v=1704272829">
       <p class="name">טאבו</p>
-      <input type="number" id="טאבו" placeholder="amount">
-      <button onclick="addToCart('טאבו')">add</button>
+      <input type="number" id="טאבו" placeholder="amount" min="1">
+      <button onclick="addToCart('טאבו', 'טאבו')">add</button>
     </div>
   </div>
    
@@ -100,8 +100,8 @@
     <div class="card">
       <img src="https://www.bookme.co.il/Images/Site/Products/549906.jpg">
       <p class="name">שם קוד</p>
-      <input type="number" id="שם קוד" placeholder="amount">
-      <button onclick="addToCart('שם קוד')">add</button>
+      <input type="number" id="שם_קוד" placeholder="amount" min="1">
+      <button onclick="addToCart('שם_קוד', 'שם קוד')">add</button>
     </div>
   </div>
    
@@ -109,8 +109,8 @@
     <div class="card">
       <img src="https://cdn.agora.co.il/deals_images/2024-02/2855875.jpg?v=1">
       <p class="name">נחש מי</p>
-      <input type="number" id="נחש מי" placeholder="amount">
-      <button onclick="addToCart('נחש מי')">add</button>
+      <input type="number" id="נחש_מי" placeholder="amount" min="1">
+      <button onclick="addToCart('נחש_מי', 'נחש מי')">add</button>
     </div>
   </div>
 </div>
@@ -195,10 +195,11 @@ body {
     }
 }
 
+/* שינוי קטן כאן כדי שלא יסתיר את העגלה במסכים מסוימים */
 .tip-box {
   position: fixed;
   left: 20px;
-  top: 200px;
+  top: 40px;
   width: 180px;
   background: #fff5fb;
   border: 2px dashed #f48dbf;
@@ -362,14 +363,19 @@ h2 {
 </style>
 
 <script>
-function addToCart(id) {
-  const input = document.getElementById(id);
+function addToCart(inputId, displayName) {
+  const input = document.getElementById(inputId);
+  if (!input) return; // הגנה למקרה שהאלמנט לא נמצא
+  
   const quantity = input.value;
-  if (quantity > 0 && quantity !== " ") {
+  
+  if (quantity > 0 && quantity.trim() !== "") {
     const cart = document.getElementById("cart");
     const li = document.createElement("li");
-    li.textContent = id + " - כמות: " + quantity;
+    li.textContent = displayName + " - כמות: " + quantity;
     cart.appendChild(li);
+    
+    input.value = "";
   }
 }
 </script>
