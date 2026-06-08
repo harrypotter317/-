@@ -365,7 +365,7 @@ h2 {
 function addToCart(id) {
   const input = document.getElementById(id);
   const quantity = input.value;
-  if (quantity > 0 && !== " ") {
+  if (quantity > 0 && quantity !== " ") {
     const cart = document.getElementById("cart");
     const li = document.createElement("li");
     li.textContent = id + " - כמות: " + quantity;
